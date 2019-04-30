@@ -19,3 +19,12 @@ Execute query on mysql through presto-cli.
 ```
 presto-cli --server coordinator:8080 --catalog first_mysql --execute 'show schemas'
 ```
+
+### Setup database
+
+Run setup script keeping mysql container runnning.
+
+```
+./migrate_and_seed.sh
+```
+

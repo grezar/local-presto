@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS presto_sandbox;
+
+CREATE USER presto;
+GRANT ALL PRIVILEGES ON presto_sandbox.* TO 'presto'@'%';
+FLUSH PRIVILEGES;
