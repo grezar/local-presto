@@ -1,10 +1,16 @@
 version: '2'
 
 services:
-  mysql:
+  first_mysql:
     image: mysql:5.7
     ports:
-      - "3306:3306"
+      - "33061:3306"
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+  second_mysql:
+    image: mysql:5.7
+    ports:
+      - "33062:3306"
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
   coordinator:
@@ -23,3 +29,7 @@ services:
         - LISTEN_PORT=8081
     ports:
       - "8081:8081"
+  presto-cli:
+    build:
+      context: .
+      dockerfile: Dockerfile-presto-cli
