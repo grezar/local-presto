@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS presto_sandbox;
+CREATE DATABASE IF NOT EXISTS local_presto;
 
 CREATE USER presto;
-GRANT ALL PRIVILEGES ON presto_sandbox.* TO 'presto'@'%';
+GRANT ALL PRIVILEGES ON local_presto.* TO 'presto'@'%';
 FLUSH PRIVILEGES;

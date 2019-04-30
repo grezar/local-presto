@@ -1,4 +1,4 @@
-INSERT INTO presto_sandbox.items (name, description, price, created_at) VALUES
+INSERT INTO local_presto.items (name, description, price, created_at) VALUES
 ('admiring',   'name starts with a', 100,  CURRENT_TIMESTAMP),
 ('beautiful',  'name starts with b', 200,  CURRENT_TIMESTAMP),
 ('charming',   'name starts with c', 300,  CURRENT_TIMESTAMP),

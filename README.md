@@ -1,4 +1,4 @@
-# presto-sandbox
+# local-presto
 
 ## Usage
 
@@ -31,4 +31,3 @@ Run setup script keeping mysql container runnning.
 
 ```
 ./migrate_and_seed.sh
-```
