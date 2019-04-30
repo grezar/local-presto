@@ -3,7 +3,7 @@ FROM openjdk:8-slim
 ENV PRESTO_CLI_VERSION 0.215
 
 RUN apt-get update && \
-      apt-get install -y wget python tar build-essential && \
+      apt-get install -y wget python tar build-essential less && \
       apt-get clean && \
       rm -rf /var/lib/apt/lists/* && \
       wget https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/${PRESTO_CLI_VERSION}/presto-cli-${PRESTO_CLI_VERSION}-executable.jar && \
