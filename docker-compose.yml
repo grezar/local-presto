@@ -7,12 +7,15 @@ services:
       - "33061:3306"
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - first_mysql:/var/lib/mysql
   second_mysql:
     image: mysql:5.7
     ports:
       - "33062:3306"
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - second_mysql:/var/lib/mysql
   coordinator:
     build:
       context: .
@@ -33,3 +36,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-presto-cli
+
+volumes:
+    first_mysql:
+        driver: 'local'
+    second_mysql:
+        driver: 'local'
