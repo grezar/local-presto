@@ -21,10 +21,14 @@ presto-cli --server coordinator:8080 --catalog first_mysql --execute 'show schem
 ```
 
 ### Setup database
+First, you need to initialize database.
+```
+mysql -u root -P 33061 -h 127.0.0.1 < sql/initialize.sql # first_mysql
+mysql -u root -P 33062 -h 127.0.0.1 < sql/initialize.sql # second_mysql
+```
 
 Run setup script keeping mysql container runnning.
 
 ```
 ./migrate_and_seed.sh
 ```
-
